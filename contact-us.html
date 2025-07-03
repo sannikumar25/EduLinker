@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<style>
+  nav {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    margin-top: 10px;
+    min-width: 140px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(0,0,0,0.2);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      font-size: 14px;
+    }
+
+    .dropdown-content {
+      min-width: 120px;
+    }
+  }
+</style>
+
+<body>
+     <nav>
+  <a href="index.html" class="home">Home</a> |
+  
+  <div class="dropdown">
+    <a href="#" class="registration">Register ▾</a>
+    <div class="dropdown-content">
+      <a href="register-teacher.html">As a Teacher</a>
+      <a href="register-student.html">As a Student</a>
+    </div>
+  </div> |
+  
+  <a href="teacher-list.html" class="search">Find Teacher</a> |
+  <a href="contact-us.html" class="contact-us">Contact Us</a> |
+  <a href="about.html" class="about-us">About Us</a>
+</nav>
+</body>
+</html>

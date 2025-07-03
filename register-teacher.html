@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Teacher</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      backdrop-filter: blur(8px);
+      padding: 10px 0;
+      min-width: 140px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        font-size: 14px;
+      }
+      .dropdown-content {
+        min-width: 120px;
+      }
+    }
+
+    .container {
+      margin-top: 100px; /* Space for fixed nav */
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    h2 {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: #000;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.3);
+      color: #000;
+      font-size: 1rem;
+      outline: none;
+      backdrop-filter: blur(5px);
+    }
+
+    input::placeholder {
+      color: #333;
+    }
+
+    input[type="file"] {
+      background: none;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #ffffff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="home">Home</a> |
+    <div class="dropdown">
+      <a href="#" class="registration">Register ▾</a>
+      <div class="dropdown-content">
+        <a href="register-teacher.html">As a Teacher</a>
+        <a href="register-student.html">As a Student</a>
+      </div>
+    </div> |
+    <a href="teacher-list.html" class="search">Find Teacher</a> |
+    <a href="contact-us.html" class="contact-us">Contact Us</a> |
+    <a href="about.html" class="about-us">About Us</a>
+  </nav>
+
+  <div class="container">
+    <h2>Register as a Teacher</h2>
+    <form id="teacherForm" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Full Name" required><br>
+      <input type="text" name="subject" placeholder="Subject" required><br>
+      <input type="text" name="location" placeholder="City / Area" required><br>
+      <input type="text" name="contact" placeholder="Contact Number" required><br>
+      <input type="time" name="available_time" placeholder="Available Time"><br>
+      <input type="file" name="profile_pic" accept="image/*"><br>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script src="register-teacher.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    gsap.from("h2", { opacity: 0, y: -40, duration: 1 });
+    gsap.from("form", { opacity: 0, y: 40, duration: 1.2, delay: 0.3 });
+  </script>
+</body>
+</html>

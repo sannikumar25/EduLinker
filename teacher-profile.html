@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    h2 {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.3);
+      color: #000;
+      font-size: 1rem;
+      outline: none;
+      backdrop-filter: blur(5px);
+    }
+
+    input::placeholder {
+      color: #333;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #ffffff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    #profileContainer {
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #000;
+      padding: 20px;
+    }
+
+    .profile-field {
+      margin-bottom: 15px;
+    }
+
+    /* Full-screen image overlay */
+    #imageOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #imageOverlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      cursor: zoom-out;
+    }
+
+    @media (max-width: 600px) {
+      form, #profileContainer {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+<style>
+  nav {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    margin-top: 10px;
+    min-width: 140px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(0,0,0,0.2);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      font-size: 14px;
+    }
+
+    .dropdown-content {
+      min-width: 120px;
+    }
+  }
+</style>
+</head>
+<body>
+   <nav>
+  <a href="index.html" class="home">Home</a> |
+  
+  <div class="dropdown">
+    <a href="#" class="registration">Register ▾</a>
+    <div class="dropdown-content">
+      <a href="register-teacher.html">As a Teacher</a>
+      <a href="register-student.html">As a Student</a>
+    </div>
+  </div> |
+  
+  <a href="teacher-list.html" class="search">Find Teacher</a> |
+  <a href="contact-us.html" class="contact-us">Contact Us</a> |
+  <a href="about.html" class="about-us">About Us</a>
+</nav>
+  <h2>View or Edit Your Profile</h2>
+  <form id="profileForm">
+    <input type="text" id="contactLookup" placeholder="Enter Contact Number" required><br>
+    <button type="button" onclick="loadProfile()">Load Profile</button>
+  </form>
+
+  <div id="profileContainer"></div>
+
+  <!-- Image zoom modal -->
+  <div id="imageOverlay" onclick="closeOverlay()">
+    <img id="overlayImage" src="" alt="Zoomed Profile Picture">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    gsap.from("h2", {
+      opacity: 0,
+      y: -40,
+      duration: 1
+    });
+
+    gsap.from("#profileForm", {
+      opacity: 0,
+      y: 40,
+      duration: 1.2,
+      delay: 0.3
+    });
+
+    gsap.from("#profileContainer", {
+      opacity: 0,
+      y: 40,
+      duration: 1.2,
+      delay: 0.5
+    });
+  </script>
+  <script src="teacher-profile.js"></script>
+</body>
+</html>

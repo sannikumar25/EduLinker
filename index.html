@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire Local Teachers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Welcome to Hire Local Teachers</h1>
+
+    <nav>
+  <a href="index.html" class="home">Home</a> |
+  
+  <div class="dropdown">
+    <a href="#" class="registration">Register ▾</a>
+    <div class="dropdown-content">
+      <a href="register-teacher.html">As a Teacher</a>
+      <a href="register-student.html">As a Student</a>
+    </div>
+  </div> |
+  
+  <a href="teacher-list.html" class="search">Find Teacher</a> |
+  <a href="contact-us.html" class="contact-us">Contact Us</a> |
+  <a href="about.html" class="about-us">About Us</a>
+</nav>
+
+<style>
+  nav {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    margin-top: 10px;
+    min-width: 140px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(0,0,0,0.2);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      font-size: 14px;
+    }
+
+    .dropdown-content {
+      min-width: 120px;
+    }
+  }
+</style>
+
+    <div class="container">
+      <a href="register-teacher.html">Register as Teacher</a> 
+
+      <a href="teacher-profile.html">Teacher Profile</a> 
+
+      <a href="register-student.html">Register as Student</a> 
+
+      <a href="teacher-list.html">View Teachers</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      let register =document.getElementsByClassName("registration");
+      register.addEventListener("OnClick",()=>{
+        
+      })
+      gsap.from("h1", {
+        opacity: 0,
+        y: 1050,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      gsap.from("nav", {
+        opacity: 0,
+        y: 1050,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+
+      gsap.from("nav a", {
+        opacity: 1,
+        x: 50,
+        stagger: 0.15,
+        duration: 0.8,
+        delay: 0.6,
+      });
+    </script>
+  </body>
+</html>
