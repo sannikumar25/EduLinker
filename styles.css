@@ -9,7 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   color: #fff;
+
 }
 
 /* Main heading with glassmorphic effect */
@@ -21,7 +23,7 @@ h1 {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-top: 10px;
+  margin-top: 170px;
 }
 
 /* Navigation bar with glassmorphic effect */
@@ -67,3 +69,19 @@ nav a:hover {
     margin: 8px 0;
   }
 }
+.container {
+  height: 70vh;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
