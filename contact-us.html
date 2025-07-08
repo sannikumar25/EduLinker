@@ -1,91 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLinker</title>
-</head>
-<link rel="stylesheet" href="styles.css">
-<style>
-  nav {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-    font-family: 'Segoe UI', sans-serif;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - EduLinker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    position: relative;
-  }
+     body {
+      font-family: "Poppins", sans-serif;
+      background: url("https://images.unsplash.com/photo-1557682250-33bd709cbe85") no-repeat center center/cover;
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
 
-  nav a:hover {
-    color: #ffd700;
-  }
-
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    backdrop-filter: blur(8px);
-    padding: 10px 0;
-    margin-top: 10px;
-    min-width: 140px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 8px 12px;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .dropdown-content a:hover {
-    background: rgba(0,0,0,0.2);
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  @media (max-width: 600px) {
     nav {
-      font-size: 14px;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
     }
 
     .dropdown-content {
-      min-width: 120px;
+      display: none;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      backdrop-filter: blur(8px);
+      padding: 10px 0;
+      min-width: 150px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-  }
-</style>
 
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 40px;
+      max-width: 750px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.2);
+      margin: 80px auto;
+    }
+
+    .glass-card img {
+      width: 200px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: transform 0.5s ease;
+    }
+
+    .glass-card img:hover {
+      transform: scale(1.15) rotate(3deg);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #eaeaea;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #fff;
+      margin: 10px;
+      font-weight: 600;
+      padding: 12px 22px;
+      font-size: 16px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffd700;
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .socials i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+     footer {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 14px;
+      border-radius: 10px;
+      color: #ccc;
+      margin: 30px 20px 10px 20px;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav { font-size: 12px; padding: 10px; }
+      .glass-card { padding: 25px; margin: 50px 10px; }
+      h2 { font-size: 1.5rem; }
+      .socials a { padding: 10px 14px; font-size: 13px; }
+    }
+  </style>
+</head>
 <body>
-     <nav>
-  <a href="index.html" class="home">Home</a> |
-  
-  <div class="dropdown">
-    <a href="#" class="registration">Register ▾</a>
-    <div class="dropdown-content">
-      <a href="register-teacher.html">As a Teacher</a>
-      <a href="register-student.html">As a Student</a>
+
+  <nav>
+    <a href="index.html">Home</a> |
+    <div class="dropdown">
+      <a href="#">Register ▾</a>
+      <div class="dropdown-content">
+        <a href="register-teacher.html">As a Teacher</a>
+        <a href="register-student.html">As a Student</a>
+      </div>
+    </div> |
+    <a href="teacher-list.html">Find Teacher</a> |
+    <a href="contact-us.html">Contact Us</a> |
+    <a href="about.html">About Us</a>
+  </nav>
+
+  <div class="glass-card">
+    <img src="images/profile.jpg" alt="Sanni Kumar">
+    <h2>Sanni Kumar</h2>
+    <p>Hi, I’m <strong>Sanni Kumar</strong>, a passionate Web Developer from Uttarakhand, India. I create responsive, interactive, and visually stunning websites using <strong>HTML, CSS, JavaScript, and GSAP</strong>. With a creative mindset and love for clean design, I craft digital experiences that are both functional and engaging.</p>
+    <p>I believe in continuous learning and love exploring new technologies. Outside of coding, you’ll find me watching movies, playing cricket, or brainstorming new ideas. I’m always open to collaboration and exciting challenges.</p>
+    <p>💬 Let’s connect and create something extraordinary together!</p>
+    <div class="socials">
+      <a href="https://github.com/sannikumar25" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+      <a href="https://www.instagram.com/sanni_jha25/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+      <a href="https://www.linkedin.com/in/sanni-kumar-527907278/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="mailto:sanniarya629@gmail.com"><i class="fas fa-envelope"></i>Email</a>
     </div>
-  </div> |
-  
-  <a href="teacher-list.html" class="search">Find Teacher</a> |
-  <a href="contact-us.html" class="contact-us">Contact Us</a> |
-  <a href="about.html" class="about-us">About Us</a>
-</nav>
+  </div>
+  <footer>
+    © 2025 <a href="https://www.linkedin.com/in/sanni-kumar-527907278/" target="_blank">Sanni Kumar</a> | All Rights Reserved | EduLinker Project 💡📖
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    gsap.from("nav", { opacity: 0, y: -50, duration: 1.2, delay: 0.3, ease: "power2.out" });
+    gsap.from("nav a", { opacity: 0, y: -20, stagger: 0.1, duration: 0.8, delay: 0.6 });
+    gsap.from('.glass-card', { opacity: 0, y: 60, duration: 1, ease: 'power3.out' });
+    gsap.from('.glass-card img', { opacity: 0, scale: 0.8, duration: 1, delay: 0.4, ease: 'elastic.out(1, 0.3)' });
+    gsap.from('.glass-card h2', { opacity: 0, y: 30, delay: 0.8, duration: 0.8 });
+    gsap.from('.glass-card p', { opacity: 0, y: 20, delay: 1.0, duration: 0.6, stagger: 0.2 });
+    gsap.from('.socials a', { opacity: 0, scale: 0.6, delay: 1.5, duration: 0.6, stagger: 0.15 });
+  </script>
+
 </body>
 </html>
